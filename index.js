@@ -4,21 +4,45 @@ const currentPrice = document.querySelector("#current_price");
 const showBtn = document.querySelector("#submit_btn");
 const outputBox = document.querySelector(".output_box");
 
+outputBox.style.color = "black"
+
+showBtn.addEventListener("click", handlwShow)
+
+function handlwShow() {
+  if (buyingPrice.value === "" || stockQuantity.value === "" || currentPrice.value === "") {
+    outputBox.innerHTML = "Plzz Fill All The Data First."
+    outputBox.style.color = "red";
+  }
+
+
+  else {
+    let buy = Number(buyingPrice.value);
+    let qunt = Number(stockQuantity.value);
+    let curr = Number(currentPrice.value);
+    calculateProfitAndLoss(buy, qunt, curr);
+  }
+}
+
+
 
 function calculateProfitAndLoss(buying, quantity, current) {
   if (buying > current) { //loss
     let loss = (buying - current) * quantity;
-    let lossPercent = (loss / buying) * 100;
-    console.log(`The loss is ${loss} And ${lossPercent}%`);
+    let lossPercent = (loss / buying) * 100..toFixed(2);
+    showOutput(`Ohhh!! Your Loss is <b>${loss.toFixed(2)}</b> 😧 and loss Percentage is <b>${lossPercent.toFixed(2)}%</b> 😔`)
+
   }
-  else if (buying < current) { //profit
+  else if (current > buying) { //profit
     let profit = (current - buying) * quantity;
     let profitPercent = (profit / buying) * 100;
-    console.log(`The profit is ${profit} And ${profitPercent}%`)
+    showOutput(`Yay!! Your Profit is <b>${profit.toFixed(2)}</b> 💥 and profit Percentage is <b>${profitPercent.toFixed(2)}% 🚀</b>`)
   }
   else { // If they are equal 
-    console.log("equal");
+    showOutput("😶No Profit | No Loss😶")
   }
 }
 
-calculateProfitAndLoss(100, 10, 100);
+function showOutput(message) {
+  outputBox.innerHTML = message;
+}
+
