@@ -1,0 +1,66 @@
+body {
+  background-color: #2e0058;
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 60px;
+}
+
+main {
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #fff;
+  padding: 15px;
+  padding-top: 60px;
+}
+
+label {
+  margin: 10px;
+  font-size: 20px;
+}
+input {
+  border: none;
+  outline: none;
+  background-color: #2e0058;
+  color: #fff;
+  margin-right: 6px;
+  width: 50%;
+  align-self: center;
+  padding: 15px;
+  border-bottom: 1px solid rgb(249, 249, 249);
+  margin-bottom: 40px;
+}
+
+::placeholder {
+  padding: 20px;
+  color: gray;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#submit_btn {
+  width: 85px;
+  height: 30px;
+  align-self: center;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: #2e0058;
+  margin-bottom: 100px;
+}
+
+#submit_btn:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.output_box {
+  color: #fff;
+  font-size: 22px;
+}

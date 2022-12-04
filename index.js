@@ -11,7 +11,7 @@ showBtn.addEventListener("click", handlwShow)
 function handlwShow() {
   if (buyingPrice.value === "" || stockQuantity.value === "" || currentPrice.value === "") {
     outputBox.innerHTML = "Plzz Fill All The Data First."
-    outputBox.style.color = "red";
+    outputBox.style.color = "white";
   }
 
 
@@ -20,6 +20,7 @@ function handlwShow() {
     let qunt = Number(stockQuantity.value);
     let curr = Number(currentPrice.value);
     calculateProfitAndLoss(buy, qunt, curr);
+
   }
 }
 
@@ -30,12 +31,18 @@ function calculateProfitAndLoss(buying, quantity, current) {
     let loss = (buying - current) * quantity;
     let lossPercent = (loss / buying) * 100..toFixed(2);
     showOutput(`Ohhh!! Your Loss is <b>${loss.toFixed(2)}</b> 😧 and loss Percentage is <b>${lossPercent.toFixed(2)}%</b> 😔`)
-
+    outputBox.style.color = "red";
+    document.querySelector("#main").style.borderColor = "red"
+    document.querySelector("#heading").style.color = "red"
   }
   else if (current > buying) { //profit
     let profit = (current - buying) * quantity;
     let profitPercent = (profit / buying) * 100;
     showOutput(`Yay!! Your Profit is <b>${profit.toFixed(2)}</b> 💥 and profit Percentage is <b>${profitPercent.toFixed(2)}% 🚀</b>`)
+    outputBox.style.color = "#31ff31";
+    document.querySelector("#main").style.borderColor = "#31ff31"
+    document.querySelector("#heading").style.color = "#31ff31"
+
   }
   else { // If they are equal 
     showOutput("😶No Profit | No Loss😶")
