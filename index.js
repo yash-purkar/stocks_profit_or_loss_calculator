@@ -29,7 +29,9 @@ function handlwShow() {
 function calculateProfitAndLoss(buying, quantity, current) {
   if (buying > current) { //loss
     let loss = (buying - current) * quantity;
-    let lossPercent = (loss / buying) * 100..toFixed(2);
+
+    let lossPercent = (loss / (buying * quantity)) * 100;
+
     showOutput(`Ohhh!! Your Loss is <b>${loss.toFixed(2)}</b> 😧 and loss Percentage is <b>${lossPercent.toFixed(2)}%</b> 😔`)
     outputBox.style.color = "red";
     document.querySelector("#main").style.borderColor = "red"
@@ -37,7 +39,9 @@ function calculateProfitAndLoss(buying, quantity, current) {
   }
   else if (current > buying) { //profit
     let profit = (current - buying) * quantity;
-    let profitPercent = (profit / buying) * 100;
+
+    let profitPercent = (profit / (buying * quantity)) * 100;
+
     showOutput(`Yay!! Your Profit is <b>${profit.toFixed(2)}</b> 💥 and profit Percentage is <b>${profitPercent.toFixed(2)}% 🚀</b>`)
     outputBox.style.color = "#31ff31";
     document.querySelector("#main").style.borderColor = "#31ff31"
