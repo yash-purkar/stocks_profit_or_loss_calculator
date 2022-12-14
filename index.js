@@ -41,7 +41,6 @@ function calculateProfitAndLoss(buying, quantity, current) {
 
       showOutput(`Ohhh!! Your Loss is <b>${loss.toFixed(2)}</b> 😧 and loss Percentage is <b>${lossPercent.toFixed(2)}%</b> 😔`)
       outputBox.style.color = "red";
-      document.querySelector("#heading").style.color = "red"
     }
   }
   else if (current > buying) { //profit
@@ -56,7 +55,6 @@ function calculateProfitAndLoss(buying, quantity, current) {
 
       showOutput(`Yay!! Your Profit is <b>${profit.toFixed(2)}</b> 💥 and profit Percentage is <b>${profitPercent.toFixed(2)}% 🚀</b>`)
       outputBox.style.color = "#31ff31";
-      document.querySelector("#heading").style.color = "#31ff31"
     }
 
 
